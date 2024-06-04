@@ -2,75 +2,63 @@
 //It must be loaded from index.html
 //It assumes that the file "myPalettes.js" has also been loaded
 
-let currentPalette;
 
-function setup() {
-    createCanvas(windowWidth, 600);
-    currentPalette = randomPalette();
+void setup() {
+    size(1200, 600);
     noStroke();
     background(0);
 }
 
-function draw() {
+void draw() {
     fill(random(255, 20));
-    const x = random(0, width);
-    const y = random(0, height);
+    float x = random(0, width);
+    float y = random(0, height);
     circle(x, y, 10);
 
     drawSnowMan(600, 380) ;
     drawSnowMan(800, 380) ;
 
-    fill("green");
+    fill(0);
   triangle(100, 10, 40, 200, 160, 200);
   triangle(100, 70, 40, 250, 160, 250);
 
-  fill("black");
+  fill(0);
   rect(80, 250, 40, 100);
 }
 
-function mouseClicked() {
+void mouseClicked() {
     background(255);
-    currentPalette = randomPalette();
-}
-
-function keyPressed() {
-    if (key === "s") {
-        save("my-p5-screenshot");
-    }
 }
 
 
-function drawSnowMan(x, y) {
+void drawSnowMan(float x, float y) {
 
-  let xCentre = x;
-  let yCentre = y;
+  float xCentre = x;
+  float yCentre = y;
 
   //Head
-  fill("white")
+  fill(255);
   circle(xCentre + 0, yCentre + 0, 100);
 
   //Eyes
-  fill("#353b48")
+  fill(160, 44, 110);
   circle(xCentre - 20, yCentre - 15, 10);
   circle(xCentre + 20, yCentre - 15, 10);
 
   //Nose
-  fill("black")
+  fill(0);
   circle(xCentre + 0, yCentre + 15, 15);
 
   //Body
-  fill("white")
+  fill(255);
   circle(xCentre + 0, yCentre + 135, 170);
   fill(255, 255, 255);
 
   //Belly-button
-  fill("blue")
+  fill(0, 255, 0);
   circle(xCentre + 0, yCentre + 115, 10);
   circle(xCentre + 0, yCentre + 135, 10);
   circle(xCentre + 0, yCentre + 155, 10);
 
-  // //Scarf
-  // fill("red");
-  // rectMode(CENTER)
-  // rect(xCentre - 20, yCentre + 50, 120, 15, 15);
 }
+
