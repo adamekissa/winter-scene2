@@ -18,9 +18,9 @@ void draw() {
     drawSnowMan(600, 380) ;
     drawSnowMan(800, 380) ;
 
-    fill(0);
-  triangle(100, 10, 40, 200, 160, 200);
-  triangle(100, 70, 40, 250, 160, 250);
+    fill(0, 255, 0);
+    triangle(100, 10, 40, 200, 160, 200);
+    triangle(100, 70, 40, 250, 160, 250);
 
   fill(0);
   rect(80, 250, 40, 100);
@@ -61,4 +61,3 @@ void drawSnowMan(float x, float y) {
   circle(xCentre + 0, yCentre + 155, 10);
 
 }
-
